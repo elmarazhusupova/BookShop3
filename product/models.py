@@ -65,4 +65,5 @@ class Cart(models.Model):
 class Feedback(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     feedback = models.TextField()
-    image = models.ImageField(upload_to='static/img', blank=True, null=True)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
